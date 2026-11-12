@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | AI Prompt Lab</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                AI Prompt Lab
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="concepts.html">Concepts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project-plan.html">Project Plan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="experiment.html">Experiment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="review.html">Peer Review</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <p class="hero-label">UNDERSTANDING THE PROBLEM</p>
+            <h1>Research & Findings</h1>
+            <p>
+                Exploring prompt engineering, AI experimentation,
+                and how a structured learning tool could help students.
+            </p>
+        </div>
+    </header>
+
+    <!-- Research Question -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="research-question-card">
+                <p class="section-label">OUR RESEARCH QUESTION</p>
+                <h2>
+                    How can a simple application help students experiment
+                    with AI prompts, evaluate the results, and learn
+                    which prompting approaches work better?
+                </h2>
+                <p>
+                    This question guides the research and development
+                    of AI Prompt Lab. Rather than assuming that one
+                    prompting technique is always best, the project
+                    explores how users can record, review, and compare
+                    their own experiments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Target Audience -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="section-label">WHO ARE WE DESIGNING FOR?</p>
+            <h2 class="section-heading">Meet our target audience</h2>
+            <p>
+                AI Prompt Lab is designed for people who want to become
+                more confident and effective when working with generative AI.
+            </p>
+        </div>
+
+        <div class="card p-4">
+            <h4>College students and beginner AI users</h4>
+            <p>
+                Our primary audience consists of college students and
+                beginners who are learning to use generative AI for
+                studying, research, brainstorming, and other everyday tasks.
+            </p>
+
+            <p>
+                These users may experiment with different prompts but
+                have difficulty remembering which approaches worked well
+                or understanding how changes to their instructions
+                affected the AI's responses.
+            </p>
+
+            <p class="mb-0">
+                <strong>Design goal:</strong> Provide a structured,
+                beginner-friendly workspace where users can save prompts,
+                review AI responses, record evaluations, and learn
+                from previous experiments.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Background -->
+    <section class="research-background section-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="section-label">BACKGROUND</p>
+                <h2>Why study prompt engineering?</h2>
+                <p>
+                    The way a user communicates with an AI model
+                    can influence the response it produces.
+                </p>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="research-info-card">
+                        <h3>What is a prompt?</h3>
+                        <p>
+                            A prompt is an input given to an AI model
+                            to start a conversation or request a response.
+                            It can contain instructions, questions,
+                            context, or examples.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="research-info-card">
+                        <h3>What is prompt engineering?</h3>
+                        <p>
+                            Prompt engineering is the process of
+                            designing and improving prompts to guide
+                            an AI model toward a desired response.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="research-highlight mt-4">
+                <h3>Key idea: prompting is iterative</h3>
+                <p>
+                    A user can start with an initial prompt, review
+                    the response, and revise the instructions.
+                    This process can be repeated to explore different
+                    ways of communicating with an AI model.
+                </p>
+                <div class="iteration-flow">
+                    <div class="iteration-step">Write a prompt</div>
+                    <span>→</span>
+                    <div class="iteration-step">Review the response</div>
+                    <span>→</span>
+                    <div class="iteration-step">Refine the prompt</div>
+                    <span>→</span>
+                    <div class="iteration-step">Try again</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Findings -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="section-label">SOURCE-BASED FINDINGS</p>
+                <h2>What does the research tell us?</h2>
+                <p>
+                    These findings come from published guidance
+                    and documentation. Each source is linked below.
+                </p>
+            </div>
+
+            <div class="research-finding">
+                <div class="finding-number">01</div>
+                <div>
+                    <h3>Clear instructions matter</h3>
+                    <p>
+                       OpenAI recommends writing clear and specific instructions.
+    A prompt can provide context, explain the task, and describe
+    the type of response the user wants. These details help guide
+    the AI toward a more relevant response.
+                    </p>
+                    <a href="https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt"
+                       target="_blank" rel="noopener noreferrer">
+                        Read OpenAI's prompt engineering best practices →
+                    </a>
+                    <p class="source-date">Date checked: November 11, 2026</p>
+                </div>
+            </div>
+
+            <div class="research-finding">
+                <div class="finding-number">02</div>
+                <div>
+                    <h3>Prompts can be improved through iteration</h3>
+                    <p>
+                         OpenAI describes prompt development as an iterative process.
+    Users can review an AI response, identify what needs improvement,
+    and revise the prompt by adjusting its instructions or context.
+    Repeating this process allows users to explore different approaches.
+                    </p>
+                    <a href="https://developers.openai.com/api/docs/guides/prompt-engineering"
+                       target="_blank" rel="noopener noreferrer">
+                        Read the OpenAI API prompt engineering guide →
+                    </a>
+                    <p class="source-date">Date checked: November 11, 2026</p>
+                </div>
+            </div>
+
+            <div class="research-finding">
+                <div class="finding-number">03</div>
+                <div>
+                    <h3>Experimentation is encouraged</h3>
+                    <p>
+                        OpenAI's prompt engineering guidance presents different techniques
+    and strategies that can be tested for different tasks.
+    This supports experimenting with alternative instructions and
+    comparing the resulting responses rather than assuming one
+    prompting approach will work best in every situation.
+                    </p>
+                    <a href="https://github.com/openai/openai-cookbook/blob/main/examples/data/oai_docs/prompt-engineering.txt"
+                       target="_blank" rel="noopener noreferrer">
+                        Explore the OpenAI Cookbook prompt engineering guide →
+                    </a>
+                    <p class="source-date">Date checked: November 11, 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts, Interpretations and Assumptions -->
+    <section class="research-background section-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="section-label">CRITICAL THINKING</p>
+                <h2>Facts, interpretations & assumptions</h2>
+                <p>
+                    It is important to distinguish documented information
+                    from our own conclusions and ideas.
+                </p>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-lg-4">
+                    <div class="evidence-card fact-card">
+                        <span class="evidence-label">FACT</span>
+                        <h3>What sources document</h3>
+                        <ul>
+                            <li>Prompts provide input and instructions to AI models.</li>
+                            <li>Clear and specific instructions are recommended.</li>
+                            <li>Reviewing and refining prompts is an established practice.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="evidence-card interpretation-card">
+                        <span class="evidence-label">INTERPRETATION</span>
+                        <h3>What we conclude</h3>
+                        <ul>
+                            <li>Recording prompt attempts could make experimentation more organized.</li>
+                            <li>Comparing results may help users recognize differences.</li>
+                            <li>A history of experiments could support reflection and learning.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="evidence-card assumption-card">
+                        <span class="evidence-label">ASSUMPTION</span>
+                        <h3>What we still need to validate</h3>
+                        <ul>
+                            <li>Students want a dedicated place to save AI experiments.</li>
+                            <li>Users will find a rating system helpful.</li>
+                            <li>A private dashboard will encourage continued use.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Implications -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="section-label">FROM RESEARCH TO DESIGN</p>
+                <h2>How research shapes AI Prompt Lab</h2>
+                <p>
+                    Our findings help explain the features
+                    we plan to include in the application.
+                </p>
+            </div>
+
+            <div class="design-decision">
+                <div class="design-decision-icon">✎</div>
+                <div>
+                    <h3>Prompt and response records</h3>
+                    <p>
+                        Since prompting involves instructions and context,
+                        users should be able to save the original prompt
+                        alongside the AI response.
+                    </p>
+                    <span>Design decision: Experiment creation form</span>
+                </div>
+            </div>
+
+            <div class="design-decision">
+                <div class="design-decision-icon">◎</div>
+                <div>
+                    <h3>Ratings and personal notes</h3>
+                    <p>
+                        Users should be able to evaluate responses
+                        and record observations about what worked
+                        or what they would change.
+                    </p>
+                    <span>Design decision: Evaluation fields</span>
+                </div>
+            </div>
+
+            <div class="design-decision">
+                <div class="design-decision-icon">↗</div>
+                <div>
+                    <h3>Experiment history</h3>
+                    <p>
+                        Because prompt refinement is iterative,
+                        users should be able to revisit previous
+                        experiments and learn from earlier attempts.
+                    </p>
+                    <span>Design decision: Private user dashboard</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- AI Assistance and Verification -->
+<section class="section-padding bg-light ai-transparency-section">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="section-label">RESEARCH TRANSPARENCY</p>
+            <h2 class="section-heading">AI assistance and verification</h2>
+            <p class="ai-transparency-intro">
+                AI tools supported the research and planning process.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="card h-100 p-4 ai-transparency-card">
+                    <div class="ai-card-number">01</div>
+                    <h4>How AI was used</h4>
+
+                    <p>
+                        ChatGPT was used to brainstorm project concepts,
+                        organize research findings, compare possible
+                        implementation approaches, and explore ideas
+                        for the application's design and architecture.
+                    </p>
+
+                    <p class="mb-0">
+                        It also assisted with outlining the website
+                        content and explaining programming concepts
+                        relevant to the proposed project.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 p-4 ai-transparency-card">
+                    <div class="ai-card-number">02</div>
+                    <h4>How information was verified</h4>
+
+                    <p>
+                        Technical recommendations and claims were
+                        compared with official documentation and
+                        original research sources whenever possible.
+                    </p>
+
+                    <p class="mb-0">
+                        Project requirements were also checked against
+                        the IS218 assignment instructions. Suggestions
+                        that could not be independently confirmed were
+                        not presented as established facts.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 p-4 ai-transparency-card">
+                    <div class="ai-card-number">03</div>
+                    <h4>Human decisions</h4>
+
+                    <p>
+                        The final project concept, intended audience,
+                        feature scope, and design decisions were
+                        reviewed and selected by the student.
+                    </p>
+
+                    <p class="mb-0">
+                        AI-generated ideas were evaluated before being
+                        incorporated into the project.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 p-4 ai-transparency-card">
+                    <div class="ai-card-number">04</div>
+                    <h4>Limitations of AI assistance</h4>
+
+                    <p>
+                        AI-generated information can contain errors,
+                        incomplete explanations, or recommendations
+                        that do not fit the project's needs.
+                    </p>
+
+                    <p class="mb-0">
+                        Independent source checking, testing, and
+                        human judgment remain necessary throughout
+                        the development process.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Research Limitations -->
+    <section class="research-background section-padding">
+        <div class="container">
+            <div class="research-question-card">
+                <p class="section-label">LIMITATIONS & NEXT STEPS</p>
+                <h2>What we still need to learn</h2>
+                <p>
+                    The sources provide useful guidance, but they do not
+                    prove that AI Prompt Lab will improve student learning.
+                    That is an assumption we need to investigate.
+                </p>
+                <p>
+                    A future step is to ask potential users about their
+                    experiences with AI prompts and show a peer the
+                    proposed workflow. Their feedback can help determine
+                    whether the planned features are understandable
+                    and useful.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <h3>AI Prompt Lab</h3>
+            <p>Experiment. Evaluate. Improve.</p>
+            <p class="footer-small">
+                Individual Research Project | IS218
+            </p>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

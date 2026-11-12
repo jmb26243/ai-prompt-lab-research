@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment | AI Prompt Lab</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">AI Prompt Lab</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                <li class="nav-item"><a class="nav-link" href="concepts.html">Concepts</a></li>
+                <li class="nav-item"><a class="nav-link" href="project-plan.html">Project Plan</a></li>
+                <li class="nav-item"><a class="nav-link active" href="experiment.html">Experiment</a></li>
+                <li class="nav-item"><a class="nav-link" href="review.html">Peer Review</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="page-hero">
+    <div class="container">
+        <p class="hero-label">EXPLORING PROGRAMMING PATTERNS</p>
+        <h1>Experiment & Evaluation</h1>
+        <p>
+            Comparing two approaches to building flexible evaluation
+            logic for AI prompt experiments.
+        </p>
+    </div>
+</header>
+
+<!-- Research Question -->
+<section class="section-padding">
+    <div class="container">
+        <div class="experiment-question">
+            <span class="experiment-label">OUR EXPERIMENTAL QUESTION</span>
+            <h2>
+                Does the Strategy design pattern make evaluation
+                logic easier to extend and maintain?
+            </h2>
+            <p>
+                We will compare a straightforward evaluation function
+                with an implementation that uses separate evaluation
+                strategies. Both approaches will perform the same
+                basic task.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Background -->
+<section class="plan-background section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="section-label">THE PROBLEM</p>
+            <h2>Why investigate this?</h2>
+            <p>
+                AI Prompt Lab needs a way to evaluate saved prompt
+                experiments. As the application grows, we may want
+                to evaluate responses using different criteria.
+            </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+            <div class="col-md-6">
+                <div class="experiment-info-card">
+                    <div class="experiment-icon">01</div>
+                    <h3>A simple starting point</h3>
+                    <p>
+                        A single function can calculate an evaluation
+                        score using a fixed set of criteria. This is
+                        straightforward and may be sufficient for
+                        a small application.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="experiment-info-card">
+                    <div class="experiment-icon">02</div>
+                    <h3>A need for flexibility</h3>
+                    <p>
+                        If we introduce additional evaluation methods,
+                        the original function may become more
+                        complicated. We want to investigate whether
+                        separating evaluation strategies helps.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Approaches -->
+<section class="section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="section-label">TWO IMPLEMENTATION APPROACHES</p>
+            <h2>Simple function vs. Strategy pattern</h2>
+            <p>
+                Both approaches will use the same evaluation criteria
+                and sample inputs so their structure can be compared.
+            </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+            <div class="col-lg-6">
+                <div class="approach-card">
+                    <span class="approach-number">APPROACH A</span>
+                    <h3>Simple evaluation function</h3>
+                    <p class="approach-description">
+                        Use one function to calculate an evaluation
+                        score from the supplied criteria.
+                    </p>
+
+                    <div class="code-example">
+                        <span class="code-caption">CONCEPTUAL PYTHON EXAMPLE</span>
+                        <pre><code>def evaluate_response(
+    clarity,
+    relevance,
+    accuracy
+):
+    return (
+        clarity +
+        relevance +
+        accuracy
+    ) / 3</code></pre>
+                    </div>
+
+                    <h4>Potential advantages</h4>
+                    <ul>
+                        <li>Easy to understand and implement.</li>
+                        <li>Less code and fewer components.</li>
+                        <li>Appropriate for a limited number of rules.</li>
+                    </ul>
+
+                    <h4>Potential limitations</h4>
+                    <ul>
+                        <li>Additional evaluation methods may require changes to the function.</li>
+                        <li>More complex rules could make the function harder to maintain.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="approach-card strategy-card">
+                    <span class="approach-number">APPROACH B</span>
+                    <h3>Strategy design pattern</h3>
+                    <p class="approach-description">
+                        Create separate evaluation strategies that
+                        share a common interface. Each strategy
+                        provides its own evaluation behavior.
+                    </p>
+
+                    <div class="code-example">
+                        <span class="code-caption">CONCEPTUAL PYTHON EXAMPLE</span>
+                        <pre><code>class EvaluationStrategy:
+    def evaluate(self, response):
+        raise NotImplementedError
+
+
+class AverageStrategy(EvaluationStrategy):
+    def evaluate(self, response):
+        return sum(response) / len(response)
+
+
+class WeightedStrategy(EvaluationStrategy):
+    def evaluate(self, response):
+        weights = [0.5, 0.3, 0.2]
+        return sum(
+            score * weight
+            for score, weight in zip(response, weights)
+        )</code></pre>
+                    </div>
+
+                    <h4>Potential advantages</h4>
+                    <ul>
+                        <li>Evaluation methods can be separated.</li>
+                        <li>New strategies can be added independently.</li>
+                        <li>May improve flexibility as requirements grow.</li>
+                    </ul>
+
+                    <h4>Potential limitations</h4>
+                    <ul>
+                        <li>Requires more classes and structure.</li>
+                        <li>May be unnecessary for a very small application.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="experiment-disclaimer">
+            These are illustrative examples of the two approaches,
+            not results from a completed implementation.
+        </p>
+    </div>
+</section>
+
+<!-- Comparison -->
+<section class="plan-background section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="section-label">EVALUATION CRITERIA</p>
+            <h2>How will we compare them?</h2>
+            <p>
+                We will use the same basic evaluation task and
+                examine the differences between the implementations.
+            </p>
+        </div>
+
+        <div class="table-responsive mt-4">
+            <table class="table experiment-table align-middle">
+                <thead>
+                    <tr>
+                        <th>Criteria</th>
+                        <th>Simple function</th>
+                        <th>Strategy pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Initial complexity</th>
+                        <td>Expected to be lower</td>
+                        <td>Expected to be higher</td>
+                    </tr>
+                    <tr>
+                        <th>Adding a new evaluation method</th>
+                        <td>May require modifying existing logic</td>
+                        <td>Can be added as another strategy</td>
+                    </tr>
+                    <tr>
+                        <th>Code organization</th>
+                        <td>Centralized in one function</td>
+                        <td>Separated into strategy classes</td>
+                    </tr>
+                    <tr>
+                        <th>Maintainability</th>
+                        <td>May become harder as rules grow</td>
+                        <td>May be easier with multiple methods</td>
+                    </tr>
+                    <tr>
+                        <th>Best fit</th>
+                        <td>Small, straightforward requirements</td>
+                        <td>Multiple or changing evaluation methods</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="experiment-disclaimer">
+            These are initial expectations based on the proposed
+            designs. The experiment will determine whether they
+            hold true in our implementation.
+        </p>
+    </div>
+</section>
+
+<!-- Prediction -->
+<section class="section-padding">
+    <div class="container">
+        <div class="prediction-card">
+            <span class="experiment-label">OUR PREDICTION</span>
+            <h2>What do we expect to discover?</h2>
+            <p>
+                We expect the simple function to be easier to build
+                initially, while the Strategy pattern may make it
+                easier to introduce additional evaluation methods.
+                However, the added structure may not provide enough
+                benefit for a small project.
+            </p>
+            <div class="prediction-highlight">
+                The goal is not to prove that design patterns are
+                always better. It is to understand when their
+                additional structure is worthwhile.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Test Plan -->
+<section class="plan-background section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="section-label">TESTING THE IDEA</p>
+            <h2>Our experiment plan</h2>
+            <p>
+                We will follow the same steps for both approaches
+                to make the comparison meaningful.
+            </p>
+        </div>
+
+        <div class="experiment-steps mt-5">
+            <div class="experiment-step">
+                <span>01</span>
+                <div>
+                    <h3>Build both implementations</h3>
+                    <p>
+                        Create a simple evaluation function and a
+                        separate Strategy pattern implementation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="experiment-step">
+                <span>02</span>
+                <div>
+                    <h3>Use identical sample data</h3>
+                    <p>
+                        Evaluate the same sample responses using
+                        the same criteria and expected results.
+                    </p>
+                </div>
+            </div>
+
+            <div class="experiment-step">
+                <span>03</span>
+                <div>
+                    <h3>Introduce another evaluation method</h3>
+                    <p>
+                        Add a new evaluation rule and observe
+                        how much each implementation needs to change.
+                    </p>
+                </div>
+            </div>
+
+            <div class="experiment-step">
+                <span>04</span>
+                <div>
+                    <h3>Run automated tests</h3>
+                    <p>
+                        Use Pytest to verify expected scores,
+                        input handling, and consistent behavior.
+                    </p>
+                </div>
+            </div>
+
+            <div class="experiment-step">
+                <span>05</span>
+                <div>
+                    <h3>Compare and document the results</h3>
+                    <p>
+                        Record code complexity, changes required,
+                        test results, and what we learned.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Assistance -->
+<section class="section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="section-label">AI-ASSISTED DEVELOPMENT</p>
+            <h2>Using AI as a programming assistant</h2>
+            <p>
+                AI tools may help explain concepts, suggest code
+                structures, and identify potential improvements.
+                Their suggestions will still need independent verification.
+            </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+            <div class="col-md-6">
+                <div class="ai-experiment-card">
+                    <div class="experiment-icon">✦</div>
+                    <h3>AI experiment</h3>
+                    <p>
+                        Ask an AI assistant to explain and implement
+                        the Strategy pattern for the evaluation task.
+                        Compare its suggested design with a simpler
+                        function-based solution.
+                    </p>
+                    <span class="status-label planned">PLANNED</span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="ai-experiment-card">
+                    <div class="experiment-icon">✓</div>
+                    <h3>Independent verification</h3>
+                    <p>
+                        Review the suggested code, check its behavior
+                        using the same sample inputs, run automated
+                        tests, and revise anything that is incorrect
+                        or unnecessarily complicated.
+                    </p>
+                    <span class="status-label planned">PLANNED</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="verification-note mt-4">
+            <strong>Verification principle:</strong>
+            AI-generated explanations and code will be treated as
+            suggestions, not authoritative results. Actual behavior
+            will be checked through documentation, code inspection,
+            and tests.
+        </div>
+    </div>
+</section>
+
+<!-- Progress -->
+<section class="plan-background section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="section-label">RESEARCH JOURNAL</p>
+            <h2>Experiment progress</h2>
+            <p>
+                We will update this section as the experiment moves
+                from planning to implementation and testing.
+            </p>
+        </div>
+
+        <div class="progress-list mt-4">
+            <div class="progress-item">
+                <span class="status-label planned">PLANNED</span>
+                <div>
+                    <h3>Define the two approaches</h3>
+                    <p>
+                        Establish the evaluation criteria and
+                        comparison method.
+                    </p>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <span class="status-label planned">PLANNED</span>
+                <div>
+                    <h3>Implement both versions</h3>
+                    <p>
+                        Build the simple function and Strategy
+                        pattern implementations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <span class="status-label planned">PLANNED</span>
+                <div>
+                    <h3>Run tests and compare results</h3>
+                    <p>
+                        Record observed behavior, test outcomes,
+                        and any unexpected findings.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="future-results mt-4">
+            <h3>Results will be added here</h3>
+            <p>
+                No experimental results have been recorded yet.
+                This section will be updated after both approaches
+                have been implemented and tested.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container text-center">
+        <h3>AI Prompt Lab</h3>
+        <p>Experiment. Evaluate. Improve.</p>
+        <p class="footer-small">Individual Research Project | IS218</p>
+        <a href="index.html">← Back to Home</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
